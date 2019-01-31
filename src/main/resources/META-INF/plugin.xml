@@ -1,0 +1,53 @@
+<idea-plugin>
+    <id>com.bulwinkel.intellij.scrcpyconnect</id>
+    <name>scrcpy connect</name>
+    <vendor email="scrcpy-connect@bulwinkel.com" url="http://github.com/Bulwinkel">Bulwinkel</vendor>
+
+    <description><![CDATA[
+    Connect to scrcpy from your IDE.
+    <br />
+    This is not an official plugin from the genymotion team.
+    ]]></description>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="131"/>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+
+        <defaultProjectTypeProvider type="Android"/>
+
+    </extensions>
+
+    <application-components>
+
+    </application-components>
+
+    <project-components>
+
+    </project-components>
+
+    <!--<depends>org.jetbrains.android</depends>-->
+
+    <actions>
+        <!--Add your actions here-->
+
+        <action id="scrcpy-connect"
+                class="com.bulwinkel.intellij.scrcpyconnect.ScrcpyConnect"
+                text="Connect to scrcpy"
+                description="Connect to attached device with scrcpy."
+                icon="/icons/ic_scrcpyconnect.png"
+                project-type="Android"
+        >
+            <add-to-group group-id="MainToolBar" anchor="last"/>
+            <add-to-group group-id="NavBarToolBar" anchor="first"/>
+        </action>
+
+    </actions>
+</idea-plugin>
