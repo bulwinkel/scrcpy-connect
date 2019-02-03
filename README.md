@@ -2,7 +2,7 @@
 Intellij Plugin for starting [scrcpy](https://github.com/Genymobile/scrcpy) without leaving your IDE.
 
 ## Note
-This is NOT an unofficial plugin.
+This is NOT an official plugin.
 
 ## Status
 Under development.
