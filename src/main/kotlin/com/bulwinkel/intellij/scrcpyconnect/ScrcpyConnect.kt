@@ -1,6 +1,6 @@
 package com.bulwinkel.intellij.scrcpyconnect
 
-import com.bulwinkel.support.cl.execForString
+import com.bulwinkel.support.cl.runCl
 import com.intellij.notification.NotificationGroup
 import com.intellij.notification.NotificationType
 import com.intellij.notification.Notifications
@@ -20,18 +20,28 @@ fun notify(message: String, type: NotificationType = NotificationType.INFORMATIO
 
 class ScrcpyConnect : AnAction() {
 
-    private var thread: Thread? = null
-
     override fun actionPerformed(e: AnActionEvent) {
-        println("actionPerformed: thread = ${Thread.currentThread().name}")
-        val path = execForString("which scrcpy")
-        println("actionPerformed: path = $path")
-        if (path.isBlank()) {
-            notify("ERROR: scrcpy is not available on your path", NotificationType.ERROR)
-            return
-        }
-        val result = execForString(path)
-        println("actionPerformed: result = $result")
+        val projectPath = e.project?.basePath ?: ""
+        println("actionPerformed: projectPath = $projectPath")
+
         notify("connecting")
+        e.runCl("scrcpy")
+
+        // todo - command `which scrcpy` don't run due to a process exception
+//        e.runCl("which scrcpy") { output ->
+//            val scrcpyPath = output.filter { it.second != null && "${it.second}" == "stdout" }
+//                .joinToString("\n") { it.first.text }
+//                .trim()
+//
+//            println("scrcpyPath = $scrcpyPath")
+//
+//            // scrcpy is available on the path
+//            if (scrcpyPath.isNotBlank()) {
+//                notify("connecting")
+//                e.runCl("scrcpy")
+//            } else {
+//                notify("ERROR: scrcpy is not available on your path", NotificationType.ERROR)
+//            }
+//        }
     }
 }
