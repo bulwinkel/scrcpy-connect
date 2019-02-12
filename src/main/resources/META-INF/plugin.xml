@@ -9,9 +9,6 @@
     This is not an official plugin from the genymotion team.
     ]]></description>
 
-    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
-    <idea-version since-build="131"/>
-
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
          on how to target different products -->
     <!-- uncomment to enable plugin in all products
@@ -33,7 +30,8 @@
 
     </project-components>
 
-    <!--<depends>org.jetbrains.android</depends>-->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>org.jetbrains.android</depends>
 
     <actions>
         <!--Add your actions here-->

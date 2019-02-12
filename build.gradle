@@ -28,6 +28,8 @@ intellij {
     version "2018.3.3"
 }
 patchPluginXml {
+    // please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description
+    sinceBuild "182"
     changeNotes """
       Add change notes here.<br>
       <em>most HTML tags may be used</em>"""
