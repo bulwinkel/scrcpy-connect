@@ -5,7 +5,7 @@ Intellij Plugin for starting [scrcpy](https://github.com/Genymobile/scrcpy) with
 This is NOT an official plugin.
 
 ## Status
-Under development.
+Works when a single device is connected only.
 
 
 # License
