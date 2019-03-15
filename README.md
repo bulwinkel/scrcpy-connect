@@ -1,12 +1,15 @@
 # Scrcpy Connect
-Intellij Plugin for starting [scrcpy](https://github.com/Genymobile/scrcpy) without leaving your IDE.
+Start [scrcpy](https://github.com/Genymobile/scrcpy) without leaving your IDE.
 
 ## Note
 This is NOT an official plugin.
 
-## Status
-Works when a single device is connected only.
+## Status: Under Development
 
+Works with a single device connected only.
+
+Next up:
+- Multi device support
 
 # License
 
